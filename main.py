@@ -35,7 +35,7 @@ elif want_prefrences == "N":
 
 
 #-------------------Activities-------------------------------------------------------------------------------------------------------------
-wantActivities = input("Would you like some prefrences for your room? (Y/N)").strip().upper()
+wantActivities = input("Would you like to Do Some Activities? (Y/N)").strip().upper()
 
 if wantActivities == "Y":
     activites = input("What activities would you like to do? \n"               
