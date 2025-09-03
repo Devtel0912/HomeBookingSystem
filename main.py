@@ -111,8 +111,8 @@ if wantActivities == "Y":
             "The Mansion Club"
         ]
     print("List of Clubs:")
-    for i, club in enumerate(Clubs, start=1):
-        print(f"{i}. {club}")
+    for i, Clubs in enumerate(Clubs, start=1):
+        print(f"{i}. {Clubs}")
         
 elif wantActivities == "N":
     print("Your Loss")
