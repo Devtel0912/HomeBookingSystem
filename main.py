@@ -1,8 +1,9 @@
 #Welcome To Our Home!!
 import random
+import pyfiglet
 
-
-print("Welcome to Our House, We hope you enjoy your stay!")
+banner = pyfiglet.figlet_format("WELCOME TO OUR HOME!!")
+print(banner)
 
 guests = int(input("How many Guests will be staying?" ))
 timeline = int(input("How long will guests will stay at home? "))
@@ -14,7 +15,7 @@ location = input("Select where you would like to sleep:")
 
 
 
-#------------------------- Prefrences -----------------------------------------------------------------------------------------------------
+#------------------------- Prefrences-----------------------------------------------------------------------------------------------------
 want_prefrences = input("Would you like some prefrences for your room? (Y/N)").strip().upper()
 
 
@@ -29,7 +30,7 @@ if want_prefrences == "Y":
         print(f"- {pref}")
 elif want_prefrences == "N":
         print("Very Well Then")
-#------------------------------------------------------------------------------------------------------------------------------------------------- 
+#-----------------------------------------------------------------------------------------------------------------------------------------
 
 
 
