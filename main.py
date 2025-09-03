@@ -2,6 +2,7 @@
 import random
 import pyfiglet
 
+
 banner = pyfiglet.figlet_format("WELCOME TO OUR HOME!!")
 print(banner)
 
@@ -96,7 +97,7 @@ if wantActivities == "Y":
             "\n(6)CMX CinéBistro Halcyon")
         
     if activites == "4":
-        Clubs =  [
+        clubs =  [
             "MJQ Concourse",
             "Tongue & Groove",
             "The Basement",
@@ -111,8 +112,8 @@ if wantActivities == "Y":
             "The Mansion Club"
         ]
     print("List of Clubs:")
-    for i, Clubs in enumerate(Clubs, start=1):
-        print(f"{i}. {Clubs}")
+    for i, club in enumerate(clubs, start=1):
+        print(f"{i}. {clubs}")
         
 elif wantActivities == "N":
     print("Your Loss")
@@ -136,33 +137,39 @@ def roomCost(guests,timeline,location,preference_list):
     else:
         extra_guest = 0
 
-
-
-    prefrences_prices = {
+    preferences_prices = {
          "AC": 20,
          "Extra Blankets": 30,
          "Mini-Fridge": 50,
          "TV": 100
     }
+    pref_extra = sum(preferences_prices.get(pref, 0) for pref in preference_list)
 
-    pref_extra = 0
-    for pref in preference_list:
-        pref_extra += prefrences_prices.get(pref.strip().title(), 0)
-
-    
     
     
     total = (base_price + extra_guest + pref_extra) * timeline
-    return total
+
+
+    return base_price, extra_guest, pref_extra, total
 
 
 
 if want_prefrences == "Y":
-     cost = roomCost(guests,timeline,location,preference_list)
+    base_price, extra_guest, pref_extra, cost = roomCost(
+        guests, timeline, location, preference_list
+    )
 else:
-     cost = roomCost(guests, timeline, location, [])
+    base_price, extra_guest, pref_extra, cost = roomCost(
+        guests, timeline, location, []
+    )
 
 
-
-print(f"\nTotal:${cost}")
-
+print("\n" + "="*40)
+print("  Billing Reciept   ")
+print("\n" + "="*40)
+print(f"Guests: {guests}")
+print(f"Days: {timeline}")
+print(f"Preferences:{pref_extra}")
+print("-"*40)
+print(f"TOTAL COST: ${cost}")
+print("="*40)
