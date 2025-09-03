@@ -118,10 +118,15 @@ elif wantActivities == "N":
     print("Your Loss")
 #---------------------------------------------------------------------------------------------------------------------------    
     
-def roomCost(guests,timeline,location):
+
+
+# --- Booking Summary ---------------------------------------------------------------------------------------------------------
+
+
+def roomCost(guests,timeline,location,preference_list):
     locationprices = {
-        "1": 100,
-        "2":50
+        "1": 100,  # Upstairs
+        "2":50     # Downstairs
     }
     
     base_price = locationprices.get(location, 80)
@@ -131,14 +136,33 @@ def roomCost(guests,timeline,location):
     else:
         extra_guest = 0
 
+
+
+    prefrences_prices = {
+         "AC": 20,
+         "Extra Blankets": 30,
+         "Mini-Fridge": 50,
+         "TV": 100
+    }
+
+    pref_extra = 0
+    for pref in preference_list:
+        pref_extra += prefrences_prices.get(pref.strip().title(), 0)
+
     
     
     
-    total = (base_price + extra_guest) * timeline
-    
+    total = (base_price + extra_guest + pref_extra) * timeline
     return total
 
 
-cost = roomCost(guests,timeline,location)
+
+if want_prefrences == "Y":
+     cost = roomCost(guests,timeline,location,preference_list)
+else:
+     cost = roomCost(guests, timeline, location, [])
+
+
+
 print(f"\nTotal:${cost}")
 
