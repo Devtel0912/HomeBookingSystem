@@ -6,6 +6,11 @@ import pyfiglet
 banner = pyfiglet.figlet_format("WELCOME TO OUR HOME!!")
 print(banner)
 
+
+print("BE OUR GUEST")
+
+
+
 guests = int(input("How many Guests will be staying?" ))
 timeline = int(input("How long will guests will stay at home? "))
 bags = int(input("How much Luggage do you have? "))
