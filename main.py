@@ -97,7 +97,7 @@ if wantActivities == "Y":
             "\n(6)CMX CinéBistro Halcyon")
         
     if activites == "4":
-        clubs =  [
+        clubs = [
             "MJQ Concourse",
             "Tongue & Groove",
             "The Basement",
@@ -111,12 +111,11 @@ if wantActivities == "Y":
             "Club Onyx",
             "The Mansion Club"
         ]
-    print("List of Clubs:")
-    for i, club in enumerate(clubs, start=1):
-        print(f"{i}. {clubs}")
-        
-elif wantActivities == "N":
-    print("Your Loss")
+        print("List of Clubs:")
+        for i, club in enumerate(clubs, start=1):
+            print(f"{i}. {club}")
+    elif wantActivities == "N":
+        print("Your Loss")
 #---------------------------------------------------------------------------------------------------------------------------    
     
 
